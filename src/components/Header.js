@@ -1,11 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 
 import yt_logo from './images/header/yt-logo.png'
 import search_img from "./images/header/search.png"
+import VideoContext from './VideoContext'
 
 function Header(props) {
-
-    const {searchText, handleChangeText, handleSearchSubmit} = props
+    const context = useContext(VideoContext)
+    const handleChangeText = context['handleChangeText']
+    const handleSearchSubmit = context['handleSearchSubmit']
+    const {searchText} = props
     return (
         <div className='header'>
             <div class="header__logo">
